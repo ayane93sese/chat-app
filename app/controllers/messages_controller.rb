@@ -19,6 +19,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params #プライベートメソッドとしてmessage_paramsを定義
-    params.require(:message).permit(:content).merge(user_id: current_user.id) #contentをmessagesテーブルへ保存できるようにする
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id) #contentをmessagesテーブルへ保存できるようにする
   end
 end
